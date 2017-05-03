@@ -24,6 +24,11 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_model_serializers (0.10.6)
+      actionpack (>= 4.1, < 6)
+      activemodel (>= 4.1, < 6)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.2)
     activejob (5.1.0)
       activesupport (= 5.1.0)
       globalid (>= 0.3.6)
@@ -40,11 +45,14 @@ GEM
       tzinfo (~> 1.1)
     arel (8.0.0)
     builder (3.2.3)
+    case_transform (0.2)
+      activesupport
     concurrent-ruby (1.0.5)
     erubi (1.6.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     i18n (0.8.1)
+    jsonapi-renderer (0.1.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.5)
@@ -60,6 +68,7 @@ GEM
       mini_portile2 (~> 2.1.0)
     puma (3.8.2)
     rack (2.0.1)
+    rack-cors (0.4.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.1.0)
@@ -108,7 +117,9 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  active_model_serializers (~> 0.10.6)
   puma (~> 3.8)
+  rack-cors
   rails (~> 5.1.0)
   sqlite3
   tzinfo-data

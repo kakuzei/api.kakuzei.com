@@ -1,0 +1,41 @@
+---
+-
+  :code: DSC_1234
+  :date_taken: 2010-10-10 10:20:00 10
+  :id: 16f32765-7d54-4873-97d0-46d63f51d945
+  :name: Sea sunrise
+  :tags:
+    -
+      :name: landscape
+    -
+      :name: sea
+-
+  :code: DSC_2456
+  :date_taken: 2011-11-11 15:57:00 1
+  :id: 78b39e83-ac69-44e9-83a6-3ae62a1ad75a
+  :name: City sunrise
+  :tags:
+    -
+      :name: landscape
+    -
+      :name: city
+-
+  :code: DSC_4678
+  :date_taken: 2012-12-12 16:57:00 1
+  :id: 87b4807c-7e35-4511-877a-534ba2f830bd
+  :name: Dragonfly
+  :tags:
+    -
+      :name: insect
+    -
+      :name: macro
+-
+  :code: DSC_1234
+  :date_taken: 2016-11-11 18:57:00 1
+  :id: b4ea5398-2e17-4e42-9b6f-e98dfe580797
+  :name: Dragonfly
+  :tags:
+    -
+      :name: insect
+    -
+      :name: macro
