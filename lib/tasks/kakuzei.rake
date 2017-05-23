@@ -42,10 +42,9 @@ namespace :kakuzei do
     model.create!(attributes)
   end
 
-
   def checksum(path, id, dpi)
-    extension = dpi == :low_dpi ? '.jpg' : '@2x.jpg'
-    file = File.join(picture_path(path), "#{id}#{extension}")
+    high_dpi = dpi == :high_dpi ? '@2x' : ''
+    file = File.join(picture_path(path), "#{id}#{high_dpi}.jpg")
     DIGEST.hexdigest(IO.binread(file)) if File.exist? file
   end
 

@@ -1,35 +1,42 @@
 class PicturesController < ApplicationController
   def index
-    render json: Picture.all
+    pictures = params[:tag_id] ? Tag.find(params[:tag_id]).pictures : Picture.all
+    render json: pictures.order(:date_taken).reverse_order
   end
 
   def show
     if params[:format] == 'jpg'
-      dpi = params[:id].last(3) == '@2x' ? :high_dpi : :low_dpi
-      id = dpi == :high_dpi ? params[:id][0..-4] : params[:id]
-      picture = read_picture(Picture.find(id), dpi)
+      picture_params = picture_params(params[:id])
+      picture = read_picture(Picture.find(picture_params[:uuid]), picture_params[:high_dpi])
       response.headers['Expires'] = 1.year.from_now.httpdate
-      response.headers['Content-Type'] = 'image/jpeg'
-      render plain: picture
-    elsif params[:format] == 'json'
+      render plain: picture, content_type: 'image/jpeg'
+    else
       render json: Picture.find(params[:id])
     end
   end
 
   private
 
-  def read_picture(picture, dpi)
-    IO.binread(file_path(picture.id, dpi)).tap do |raw_file|
-      fail 'Invalid checksum' unless valid_checksum?(dpi, picture, Digest::SHA2.hexdigest(raw_file))
+  def read_picture(picture, high_dpi)
+    IO.binread(file_path(picture.id, high_dpi)).tap do |raw_file|
+      raise Error::InvalidChecksum unless valid_checksum?(high_dpi, picture, Digest::SHA2.hexdigest(raw_file))
     end
+  rescue Errno::ENOENT
+    raise Error::FileNotFound
   end
 
-  def file_path(name, dpi)
-    extension = dpi == :high_dpi ? '@2x.jpg' : '.jpg'
-    File.join(Setting.take.path, "#{name}#{extension}")
+  def file_path(name, high_dpi)
+    File.join(Setting.take.path, "#{name}#{high_dpi}.jpg")
   end
 
-  def valid_checksum?(dpi, picture, checksum)
-    checksum == (dpi == :low_dpi ? picture.low_resolution_checksum : picture.high_resolution_checksum)
+  def valid_checksum?(high_dpi, picture, checksum)
+    checksum == (high_dpi ? picture.high_resolution_checksum : picture.low_resolution_checksum)
+  end
+
+  def picture_params(id)
+    @uuid_matcher ||= Regexp.new(/^(?<uuid>[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12})(?<high_dpi>@2x)?$/)
+    @uuid_matcher.match(id).tap do |matches|
+      raise ActiveRecord::RecordNotFound unless matches
+    end
   end
 end
