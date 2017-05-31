@@ -6,10 +6,8 @@ class PicturesController < ApplicationController
 
   def show
     if params[:format] == 'jpg'
-      picture_params = picture_params(params[:id])
-      picture = read_picture(Picture.find(picture_params[:uuid]), picture_params[:high_dpi])
       response.headers['Expires'] = 1.year.from_now.httpdate
-      render plain: picture, content_type: 'image/jpeg'
+      render plain: picture_file, content_type: 'image/jpeg'
     else
       render json: Picture.find(params[:id])
     end
@@ -17,7 +15,12 @@ class PicturesController < ApplicationController
 
   private
 
-  def read_picture(picture, high_dpi)
+  def picture_file
+    picture_params = picture_params(params[:id])
+    read_picture_file(Picture.find(picture_params[:uuid]), picture_params[:high_dpi])
+  end
+
+  def read_picture_file(picture, high_dpi)
     IO.binread(file_path(picture.id, high_dpi)).tap do |raw_file|
       raise Error::InvalidChecksum unless valid_checksum?(high_dpi, picture, Digest::SHA2.hexdigest(raw_file))
     end
@@ -26,7 +29,8 @@ class PicturesController < ApplicationController
   end
 
   def file_path(name, high_dpi)
-    File.join(Setting.take.path, "#{name}#{high_dpi}.jpg")
+    @picture_path ||= Setting.take.path
+    File.join(@picture_path, "#{name}#{high_dpi}.jpg")
   end
 
   def valid_checksum?(high_dpi, picture, checksum)

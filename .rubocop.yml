@@ -1,0 +1,18 @@
+AllCops:
+  Exclude:
+    - db/migrate/*
+    - db/schema.rb
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  ExtraDetails: true
+  TargetRubyVersion: 2.4
+  TargetRailsVersion: 5.1
+
+Metrics/LineLength:
+  Max: 120
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

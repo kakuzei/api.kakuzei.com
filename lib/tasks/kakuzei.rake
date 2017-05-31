@@ -1,4 +1,4 @@
-namespace :kakuzei do
+namespace :kakuzei do # rubocop:disable Metrics/BlockLength
   DIGEST = Digest::SHA2.new
 
   desc 'Generate the database from imported data'
@@ -24,7 +24,7 @@ namespace :kakuzei do
     end
   end
 
-  def insert_pictures(path)
+  def insert_pictures(path) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     puts 'Insert pictures data'
     load_data(path, 'pictures').each do |picture|
       tags = picture.delete(:tags)
