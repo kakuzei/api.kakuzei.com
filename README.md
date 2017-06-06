@@ -1,24 +1,35 @@
-# README
+## Rails server for kakuzei.com website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Introduction
 
-Things you may want to cover:
+rails.kakuzei.com provides a REST API for accessing pictures.
 
-* Ruby version
+### Requirements
 
-* System dependencies
+* Ruby 2.3.3 with bundler
 
-* Configuration
+### Quickstart
 
-* Database creation
+##### Setup the Database with Sample Data
 
-* Database initialization
+Load a sample of pictures with tags by executing the following command:
 
-* How to run the test suite
+```bash
+bundle exec rake kakuzei:generate
+```
+ * it creates the datamodel,
+ * it imports the pictures definition from the data/pictures.yml file,
+ * it imports the tags definition from the data/tags.yml file.
 
-* Services (job queues, cache servers, search engines, etc.)
+##### Start the Server
 
-* Deployment instructions
+Start the server by executing the following command:
 
-* ...
+```bash
+bundle exec puma
+```
+ 
+ 
+### License
+
+This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more info.
