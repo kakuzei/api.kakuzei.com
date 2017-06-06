@@ -11,6 +11,9 @@ AllCops:
 Metrics/LineLength:
   Max: 120
 
+Lint/ScriptPermission:
+  Enabled: false
+
 Style/Documentation:
   Enabled: false
 
