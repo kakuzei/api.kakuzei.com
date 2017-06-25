@@ -1,0 +1,22 @@
+picture_1:
+  id: 16f32765-7d54-4873-97d0-46d63f51d945
+  code: DSC_1234
+  date_taken: 2010-10-10 10:10:10 10
+  name: Tarantula
+  low_resolution_checksum: 123
+
+picture_2:
+  id: 296b58e5-6b30-47d0-9262-23939ee4e0d0
+  code: DSC_2345
+  date_taken: 2008-08-08 08:08:08 08
+  name: Dragonfly
+  low_resolution_checksum: 234
+  high_resolution_checksum: 567
+
+picture_3:
+  id: a70f6539-b93d-4b29-ab84-5fb6a0155008
+  code: DSC_3456
+  date_taken: 2009-09-09 09:09:09 09
+  name: Self-portrait
+  low_resolution_checksum: 345
+  high_resolution_checksum: 678

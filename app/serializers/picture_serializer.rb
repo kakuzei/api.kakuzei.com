@@ -6,6 +6,10 @@ class PictureSerializer < ApplicationSerializer
   link(:src) { "api/pictures/#{object.id}.jpg" }
   link(:high_resolution_src) { "api/pictures/#{object.id}@2x.jpg" if object.high_resolution_checksum }
 
+  def tags
+    object.tags.order(:name)
+  end
+
   def high_resolution_available
     !object.high_resolution_checksum.nil?
   end

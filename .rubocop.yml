@@ -8,10 +8,16 @@ AllCops:
   TargetRubyVersion: 2.4
   TargetRailsVersion: 5.1
 
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
+
 Metrics/LineLength:
   Max: 120
 
 Lint/ScriptPermission:
+  Enabled: false
+
+RSpec/BeforeAfterAll:
   Enabled: false
 
 Style/Documentation:

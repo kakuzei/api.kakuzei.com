@@ -6,7 +6,7 @@ rails.kakuzei.com provides a REST API for accessing pictures.
 
 ### Requirements
 
-* Ruby 2.3.3 with bundler
+* Ruby 2.4.1 with Bundler
 
 ### Quickstart
 
@@ -28,7 +28,16 @@ Start the server by executing the following command:
 ```bash
 bundle exec puma
 ```
+
+### Development
  
+##### Unit Testing
+
+Execute the unit tests by executing the following command:
+
+```bash
+bundle exec rake spec
+```
  
 ### License
 
