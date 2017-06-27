@@ -29,8 +29,8 @@ namespace :kakuzei do # rubocop:disable Metrics/BlockLength
     load_data(path, 'pictures').each do |picture|
       tags = picture.delete(:tags)
       puts " - insert picture '#{picture[:name]}' with tags #{tags.map { |t| "'#{t[:name]}'" }.join(', ')}"
-      picture[:low_resolution_checksum] = checksum(path, picture[:id], :low_dpi)
-      picture[:high_resolution_checksum] = checksum(path, picture[:id], :high_dpi)
+      picture[:low_density_checksum] = checksum(path, picture[:id], '')
+      picture[:high_density_checksum] = checksum(path, picture[:id], '@2x')
       insert(Picture, picture)
       tags.map { |tag| Tag.find_by(tag).id }.each do |tag_id|
         insert(PicturesTag, tag_id: tag_id, picture_id: picture[:id])
@@ -42,9 +42,8 @@ namespace :kakuzei do # rubocop:disable Metrics/BlockLength
     model.create!(attributes)
   end
 
-  def checksum(path, id, dpi)
-    high_dpi = dpi == :high_dpi ? '@2x' : ''
-    file = File.join(picture_path(path), "#{id}#{high_dpi}.jpg")
+  def checksum(path, id, density)
+    file = File.join(picture_path(path), "#{id}#{density}.jpg")
     DIGEST.hexdigest(IO.binread(file)) if File.exist? file
   end
 

@@ -4,6 +4,10 @@ module Requests
       response.body
     end
 
+    def content_type
+      response.content_type
+    end
+
     def json
       JSON.parse(body, symbolize_names: true)
     end
@@ -33,14 +37,14 @@ module Requests
         id: picture.id,
         type: 'pictures',
         attributes: { code: picture.code, name: picture.name, dateTaken: picture.date_taken.as_json,
-                      highResolutionAvailable: picture.high_resolution_checksum ? true : false },
+                      highDensityAvailable: picture.high_density_checksum ? true : false },
         relationships: { tags: { data: tags_data } },
         links: picture_link(picture)
       }
     end
 
     def picture_link(picture)
-      links = picture.high_resolution_checksum ? { highResolutionSrc: "api/pictures/#{picture.id}@2x.jpg" } : {}
+      links = picture.high_density_checksum ? { highDensitySrc: "api/pictures/#{picture.id}@2x.jpg" } : {}
       links.merge(self: "api/pictures/#{picture.id}", src: "api/pictures/#{picture.id}.jpg")
     end
 

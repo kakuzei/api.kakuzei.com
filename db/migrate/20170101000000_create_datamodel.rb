@@ -10,12 +10,12 @@ class CreateDatamodel < ActiveRecord::Migration[5.1]
       t.string :code, null: false
       t.string :name, null: false
       t.datetime :date_taken, null: false
-      t.string :low_resolution_checksum, null: false
-      t.string :high_resolution_checksum
+      t.string :low_density_checksum, null: false
+      t.string :high_density_checksum
     end
     add_index :pictures, :date_taken, unique: true
-    add_index :pictures, :low_resolution_checksum, unique: true
-    add_index :pictures, :high_resolution_checksum, unique: true
+    add_index :pictures, :low_density_checksum, unique: true
+    add_index :pictures, :high_density_checksum, unique: true
 
     create_table :tags, id: :uuid do |t|
       t.string :name, null: false
