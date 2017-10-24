@@ -6,7 +6,7 @@ rails.kakuzei.com provides a REST API for accessing pictures.
 
 ### Requirements
 
-* Ruby 2.4.1 with Bundler
+* Ruby 2.4.2 with Bundler
 
 ### Quickstart
 
@@ -30,7 +30,7 @@ bundle exec puma
 ```
 
 ### Development
- 
+
 ##### Unit Testing
 
 Execute the unit tests by executing the following command:
@@ -39,7 +39,7 @@ Execute the unit tests by executing the following command:
 bundle exec rake db:migrate RAILS_ENV=test
 bundle exec rake spec
 ```
- 
+
 ### License
 
 This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more info.

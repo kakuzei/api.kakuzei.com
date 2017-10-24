@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
-ruby '2.4.1'
+ruby '2.4.2'
 
 # Rails
 gem 'active_model_serializers'
 gem 'rack-cors'
 gem 'rails'
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'tzinfo-data'
 
 # Database
 gem 'sqlite3'
