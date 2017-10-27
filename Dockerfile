@@ -23,5 +23,4 @@ COPY . .
 RUN chown -R rails:rails .
 USER rails
 
-RUN bundle exec rake kakuzei:generate
-CMD bundle exec puma
+CMD bundle exec rake kakuzei:generate && bundle exec puma

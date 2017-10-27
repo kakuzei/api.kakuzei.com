@@ -17,9 +17,9 @@ Load a sample of pictures with tags by executing the following command:
 ```bash
 bundle exec rake kakuzei:generate
 ```
- * it creates the datamodel,
- * it imports the pictures definition from the data/pictures.yml file,
- * it imports the tags definition from the data/tags.yml file.
+* it creates the datamodel,
+* it imports the pictures definition from the data/pictures.yml file,
+* it imports the tags definition from the data/tags.yml file.
 
 ##### Start the Server
 
@@ -27,6 +27,30 @@ Start the server by executing the following command:
 
 ```bash
 bundle exec puma
+```
+
+### Docker
+
+##### Build the image
+
+Build a docker image by executing the following command:
+
+```bash
+docker build -t kakuzei.com/rails .
+```
+
+##### Start the container
+
+Start the REST API by executing the following command:
+
+```bash
+docker run -d -p 3000:3000 kakuzei.com/rails
+```
+
+You can use a custom data folder using the --mount argument:
+
+```bash
+docker run -d -p 3000:3000 --mount type=bind,source=/custom/data,target=/app/data kakuzei.com/rails
 ```
 
 ### Development
