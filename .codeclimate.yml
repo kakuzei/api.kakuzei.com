@@ -1,0 +1,9 @@
+plugins:
+  brakeman:
+    enabled: true
+  flog:
+    enabled: true
+  reek:
+    enabled: true
+  rubocop:
+    enabled: true
