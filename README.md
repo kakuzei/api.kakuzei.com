@@ -1,4 +1,4 @@
-## Rails server for kakuzei.com website [![Build Status](https://travis-ci.org/kakuzei/rails.kakuzei.com.svg?branch=master)](https://travis-ci.org/kakuzei/rails.kakuzei.com) [![Code Climate](https://codeclimate.com/github/kakuzei/rails.kakuzei.com/badges/gpa.svg)](https://codeclimate.com/github/kakuzei/rails.kakuzei.com)
+## Rails server for kakuzei.com website [![Build Status](https://travis-ci.org/kakuzei/rails.kakuzei.com.svg?branch=master)](https://travis-ci.org/kakuzei/rails.kakuzei.com) [![Maintainability](https://api.codeclimate.com/v1/badges/29fdfd4cc3f516610ea4/maintainability)](https://codeclimate.com/github/kakuzei/rails.kakuzei.com/maintainability)
 
 ### Introduction
 
