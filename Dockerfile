@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:3.7
 
 ENV BUILD_PACKAGES bash build-base curl-dev ruby-dev sqlite-dev zlib-dev
 ENV RUBY_PACKAGES ruby ruby-bigdecimal ruby-bundler ruby-io-console ruby-irb ruby-nokogiri ruby-rdoc sqlite-libs
