@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.4.4'
+ruby '2.5.1'
 
 # Rails
 gem 'active_model_serializers'
@@ -16,7 +16,7 @@ gem 'puma'
 
 # Tests
 group :development, :test do
-  gem 'database_cleaner', '=1.6.1'
+  gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'rubocop'
   gem 'rubocop-rspec'

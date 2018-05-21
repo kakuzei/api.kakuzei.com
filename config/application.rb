@@ -22,5 +22,8 @@ module RailsKakuzeiCom
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Configure active record to use an integer for boolean values
+    config.active_record.sqlite3.represent_boolean_as_integer = true
   end
 end

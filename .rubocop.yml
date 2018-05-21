@@ -14,6 +14,9 @@ Metrics/BlockLength:
 Metrics/LineLength:
   Max: 120
 
+Layout/EndOfLine:
+  EnforcedStyle: crlf
+  
 Lint/ScriptPermission:
   Enabled: false
 
