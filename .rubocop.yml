@@ -15,7 +15,7 @@ Metrics/LineLength:
   Max: 120
 
 Layout/EndOfLine:
-  EnforcedStyle: crlf
+  EnforcedStyle: lf
   
 Lint/ScriptPermission:
   Enabled: false
