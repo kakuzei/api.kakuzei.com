@@ -15,7 +15,7 @@ rails.kakuzei.com provides a REST API for accessing pictures.
 Load a sample of pictures with tags by executing the following command:
 
 ```bash
-bundle exec rake kakuzei:generate
+bundle exec rake kakuzei:init
 ```
 * it creates the datamodel,
 * it imports the pictures definition from the data/pictures.yml file,

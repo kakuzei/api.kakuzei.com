@@ -1,8 +1,8 @@
 namespace :kakuzei do # rubocop:disable Metrics/BlockLength
   DIGEST = Digest::SHA2.new
 
-  desc 'Generate the database from imported data'
-  task :generate, %i[path] => %i[environment] do |_, args|
+  desc 'Initialize the database with provided data'
+  task :init, %i[path] => %i[environment] do |_, args|
     path = args[:path] || File.join(Rails.root, 'data')
     reset_database
     insert_settings(path)
