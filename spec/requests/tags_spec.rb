@@ -16,7 +16,9 @@ RSpec.describe 'tags api', type: :request do
 
     describe 'when there are some tags available' do
       fixtures :all
+
       before(:all) { DatabaseCleaner.start }
+
       after(:all) { DatabaseCleaner.clean }
 
       let :sorted_json_tags do
@@ -36,7 +38,9 @@ RSpec.describe 'tags api', type: :request do
   describe 'show' do
     describe 'when the requested tag exists' do
       fixtures :all
+
       before(:all) { DatabaseCleaner.start }
+
       after(:all) { DatabaseCleaner.clean }
 
       before { get "/api/tags/#{tags(:tag_1).id}" }

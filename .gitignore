@@ -23,8 +23,5 @@
 # Ignore IDE files
 /.idea/*
 
-# Ignore Gemfile.lock to avoid cross platform issue
-Gemfile.lock
-
 # Ignore the coverage output
 /coverage/*

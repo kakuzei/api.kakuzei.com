@@ -18,7 +18,9 @@ RSpec.describe 'pictures api', type: :request do
       before { get '/api/pictures' }
 
       fixtures :all
+
       before(:all) { DatabaseCleaner.start }
+
       after(:all) { DatabaseCleaner.clean }
 
       let :sorted_json_pictures do
@@ -41,7 +43,9 @@ RSpec.describe 'pictures api', type: :request do
       before { get "/api/tags/#{tags(:tag_2).id}/pictures" }
 
       fixtures :all
+
       before(:all) { DatabaseCleaner.start }
+
       after(:all) { DatabaseCleaner.clean }
 
       let :sorted_json_pictures do
@@ -62,7 +66,9 @@ RSpec.describe 'pictures api', type: :request do
     context 'when there is no format provided' do
       describe 'when the requested picture exists' do
         fixtures :all
+
         before(:all) { DatabaseCleaner.start }
+
         after(:all) { DatabaseCleaner.clean }
 
         before { get "/api/pictures/#{pictures(:picture_1).id}" }
@@ -103,10 +109,12 @@ RSpec.describe 'pictures api', type: :request do
 
     RSpec.shared_examples 'manage picture requests when the jpg format provided' do |density|
       fixtures :all
+
       before(:all) do
         DatabaseCleaner.start
         Setting.create(path: File.join(__dir__, '..', 'data'))
       end
+
       after(:all) { DatabaseCleaner.clean }
 
       describe 'when the requested picture exists' do
