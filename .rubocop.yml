@@ -2,6 +2,7 @@ AllCops:
   Exclude:
     - db/migrate/*
     - db/schema.rb
+    - vendor/**/*  
   DisplayCopNames: true
   DisplayStyleGuide: true
   ExtraDetails: true
