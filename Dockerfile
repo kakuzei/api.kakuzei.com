@@ -5,7 +5,7 @@ ENV RUBY_PACKAGES ruby ruby-bigdecimal ruby-bundler ruby-etc ruby-io-console rub
 
 WORKDIR /app
 
-COPY Gemfile* .
+COPY Gemfile* ./
 
 RUN apk update \
  && apk upgrade \
