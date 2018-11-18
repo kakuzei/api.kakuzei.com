@@ -9,7 +9,7 @@ gem 'rails'
 gem 'tzinfo-data'
 
 # Database
-gem 'sqlite3', git: 'https://github.com/larskanis/sqlite3-ruby', branch: 'add-gemspec'
+gem 'sqlite3'
 
 # Server
 gem 'puma'
