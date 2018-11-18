@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.5.1'
+ruby '2.5.3'
 
 # Rails
 gem 'active_model_serializers'
@@ -9,7 +9,7 @@ gem 'rails'
 gem 'tzinfo-data'
 
 # Database
-gem 'sqlite3'
+gem 'sqlite3', git: 'https://github.com/larskanis/sqlite3-ruby', branch: 'add-gemspec'
 
 # Server
 gem 'puma'

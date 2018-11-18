@@ -6,7 +6,7 @@ rails.kakuzei.com provides a REST API for accessing pictures.
 
 ### Requirements
 
-* Ruby 2.5.1 with Bundler
+* Ruby 2.5.3 with Bundler
 
 ### Quickstart
 
