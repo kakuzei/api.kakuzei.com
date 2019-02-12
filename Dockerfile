@@ -1,6 +1,7 @@
 FROM ruby:2.6.1-alpine
 
 ENV BUILD_PACKAGES bash build-base curl-dev sqlite-dev zlib-dev
+ENV RUNTIME_PACKAGES sqlite sqlite-libs
 
 WORKDIR /app
 
@@ -9,6 +10,7 @@ COPY Gemfile* ./
 RUN apk update \
  && apk upgrade \
  && apk add $BUILD_PACKAGES \
+ && apk add $RUNTIME_PACKAGES \
  && rm -rf /var/cache/apk/* \
  && gem update bundler \
  && bundle install \
