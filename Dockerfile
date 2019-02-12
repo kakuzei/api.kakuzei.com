@@ -1,7 +1,7 @@
-FROM alpine:edge
+FROM ruby:2.6.1-alpine
 
-ENV BUILD_PACKAGES bash build-base curl-dev ruby-dev sqlite-dev zlib-dev
-ENV RUBY_PACKAGES ruby ruby-bigdecimal ruby-bundler ruby-etc ruby-io-console ruby-irb ruby-nokogiri ruby-rdoc sqlite sqlite-libs
+ENV BUILD_PACKAGES bash build-base curl-dev sqlite-dev zlib-dev
+ENV RUNTIME_PACKAGES sqlite sqlite-libs
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ COPY Gemfile* ./
 RUN apk update \
  && apk upgrade \
  && apk add $BUILD_PACKAGES \
- && apk add $RUBY_PACKAGES \
+ && apk add $RUNTIME_PACKAGES \
  && rm -rf /var/cache/apk/* \
  && gem update bundler \
  && bundle install \
