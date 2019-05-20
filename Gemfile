@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.6.1'
+ruby '2.6.3'
 
 # Rails
 gem 'active_model_serializers'
@@ -9,7 +9,7 @@ gem 'rails'
 gem 'tzinfo-data'
 
 # Database
-gem 'sqlite3', '~> 1.3.6'
+gem 'sqlite3'
 
 # Server
 gem 'puma'

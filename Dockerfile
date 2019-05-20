@@ -1,4 +1,4 @@
-FROM ruby:2.6.1-alpine
+FROM ruby:2.6.3-alpine
 
 ENV BUILD_PACKAGES bash build-base curl-dev sqlite-dev zlib-dev
 ENV RUNTIME_PACKAGES sqlite sqlite-libs
