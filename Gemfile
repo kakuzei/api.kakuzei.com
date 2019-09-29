@@ -1,9 +1,12 @@
 source 'https://rubygems.org'
 
-ruby '2.6.3'
+ruby '2.6.4'
+
+gem 'rake'
 
 # Rails
 gem 'active_model_serializers'
+gem 'bootsnap'
 gem 'rack-cors'
 gem 'rails'
 gem 'tzinfo-data'
@@ -19,6 +22,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'rubocop'
+  gem 'rubocop-rails'
   gem 'rubocop-rspec'
   gem 'simplecov'
 end

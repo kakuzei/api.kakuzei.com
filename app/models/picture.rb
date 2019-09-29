@@ -1,3 +1,4 @@
 class Picture < ApplicationRecord
-  has_and_belongs_to_many :tags
+  has_many :pictures_tags, dependent: :destroy
+  has_many :tags, through: :pictures_tags
 end

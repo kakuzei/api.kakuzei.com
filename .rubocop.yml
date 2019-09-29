@@ -6,7 +6,6 @@ AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
   ExtraDetails: true
-  TargetRubyVersion: 2.6
   TargetRailsVersion: 5.2
 
 Metrics/BlockLength:

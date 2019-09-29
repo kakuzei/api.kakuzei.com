@@ -131,11 +131,11 @@ RSpec.describe 'pictures api', type: :request do
         end
 
         it 'responds with the image/jpeg content type' do
-          expect(content_type).to eq 'image/jpeg'
+          expect(content_type).to eq 'image/jpeg; charset=utf-8'
         end
 
         it 'defines the expires date header to 1 year from now' do
-          expect(Date.parse(response.headers['Expires'])).to be > Date.today + 1.year - 1.minute
+          expect(Date.parse(response.headers['Expires'])).to be > Time.zone.today + 1.year - 1.minute
         end
       end
 

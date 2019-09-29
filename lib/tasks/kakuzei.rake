@@ -3,7 +3,7 @@ namespace :kakuzei do # rubocop:disable Metrics/BlockLength
 
   desc 'Initialize the database with provided data'
   task :init, %i[path] => %i[environment] do |_, args|
-    path = args[:path] || File.join(Rails.root, 'data')
+    path = args[:path] || Rails.root.join('data')
     reset_database
     insert_settings(path)
     insert_tags(path)
