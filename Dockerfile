@@ -1,5 +1,6 @@
-FROM ruby:2.6.3-alpine
+FROM ruby:2.6.5-alpine
 
+ENV LANG="C.UTF-8"
 ENV BUILD_PACKAGES bash build-base curl-dev sqlite-dev zlib-dev
 ENV RUNTIME_PACKAGES sqlite sqlite-libs
 
@@ -16,7 +17,8 @@ RUN apk update \
  && bundle install \
  && gem cleanup \
  && rm -rf /usr/lib/ruby/gems/*/cache/* \
- && apk del $BUILD_PACKAGES
+ && apk del $BUILD_PACKAGES \
+ && mkdir -p tmp/pids
 
 RUN addgroup -g 1000 rails \
  && adduser -S -u 1000 -g rails -s /bin/bash rails

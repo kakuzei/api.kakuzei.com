@@ -1,19 +1,9 @@
 module Requests
   module ResponseHelpers
-    def body
-      response.body
-    end
-
-    def content_type
-      response.content_type
-    end
+    delegate :body, :content_type, :status, to: :response
 
     def json
       JSON.parse(body, symbolize_names: true)
-    end
-
-    def status
-      response.status
     end
   end
 

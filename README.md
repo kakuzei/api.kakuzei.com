@@ -6,9 +6,33 @@ rails.kakuzei.com provides a REST API for accessing pictures.
 
 ### Requirements
 
-* Ruby 2.5.3 with Bundler
+* Docker
 
 ### Quickstart
+
+##### Build the ruby-dev Docker image
+
+Build the ruby-dev Docker image by executing the following command:
+
+```bash
+docker build -f Dockerfile-dev -t ruby-dev .
+```
+
+##### Run a ruby-dev Docker container
+
+Run a ruby-dev Docker container by executing the following command:
+
+```bash
+docker run --rm --name rails.kakuzei.com -p 3000:3000 -v %CD%:/app -v bundle:/usr/local/bundle -w /app -it ruby-dev
+```
+
+##### Install the Ruby dependencies
+
+Install the Ruby dependencies by executing the following command inside the running container:
+
+```bash
+bundle install
+```
 
 ##### Setup the Database with Sample Data
 
@@ -29,7 +53,7 @@ Start the server by executing the following command:
 bundle exec puma
 ```
 
-### Docker
+### Production
 
 ##### Build the image
 

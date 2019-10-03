@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.6.3'
+ruby '2.6.5'
+
+gem 'rake'
 
 # Rails
 gem 'active_model_serializers'
@@ -19,6 +21,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'rubocop'
+  gem 'rubocop-rails'
   gem 'rubocop-rspec'
   gem 'simplecov'
 end

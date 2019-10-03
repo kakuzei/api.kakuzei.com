@@ -1,4 +1,4 @@
-class CreateDatamodel < ActiveRecord::Migration[5.1]
+class CreateDatamodel < ActiveRecord::Migration[6.0]
   def change
     create_table :settings, id: false do |t|
       t.string :lock, default: 'X'

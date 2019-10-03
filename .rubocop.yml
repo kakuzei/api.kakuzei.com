@@ -2,12 +2,11 @@ AllCops:
   Exclude:
     - db/migrate/*
     - db/schema.rb
-    - vendor/**/*  
+    - vendor/**/*
   DisplayCopNames: true
   DisplayStyleGuide: true
   ExtraDetails: true
-  TargetRubyVersion: 2.6
-  TargetRailsVersion: 5.2
+  TargetRailsVersion: 6.0
 
 Metrics/BlockLength:
   ExcludedMethods: ['describe', 'context', 'shared_examples']
@@ -17,7 +16,7 @@ Metrics/LineLength:
 
 Layout/EndOfLine:
   EnforcedStyle: lf
-  
+
 Lint/ScriptPermission:
   Enabled: false
 
