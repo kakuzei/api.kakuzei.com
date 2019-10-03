@@ -6,7 +6,6 @@ gem 'rake'
 
 # Rails
 gem 'active_model_serializers'
-gem 'bootsnap'
 gem 'rack-cors'
 gem 'rails'
 gem 'tzinfo-data'
