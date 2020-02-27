@@ -1,4 +1,4 @@
-## Rails server for kakuzei.com website [![Build Status](https://github.com/kakuzei/rails.kakuzei.com/workflows/build/badge.svg?branch=master)]
+## Rails server for kakuzei.com website ![build](https://github.com/kakuzei/rails.kakuzei.com/workflows/build/badge.svg)
 
 ### Introduction
 
