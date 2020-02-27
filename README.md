@@ -1,4 +1,4 @@
-## Rails server for kakuzei.com website [![Build Status](https://travis-ci.org/kakuzei/rails.kakuzei.com.svg?branch=master)](https://travis-ci.org/kakuzei/rails.kakuzei.com) [![Maintainability](https://api.codeclimate.com/v1/badges/29fdfd4cc3f516610ea4/maintainability)](https://codeclimate.com/github/kakuzei/rails.kakuzei.com/maintainability)
+## Rails server for kakuzei.com website [![Build Status](https://github.com/kakuzei/rails.kakuzei.com/workflows/build/badge.svg?branch=master)]
 
 ### Introduction
 
