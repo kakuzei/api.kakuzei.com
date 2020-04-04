@@ -60,7 +60,7 @@ bundle exec puma
 Build a docker image by executing the following command:
 
 ```bash
-docker build -t kakuzei.com/api .
+docker build -t kakuzei/api.kakuzei.com .
 ```
 
 ##### Start the container
@@ -68,13 +68,13 @@ docker build -t kakuzei.com/api .
 Start the REST API by executing the following command:
 
 ```bash
-docker run -d -p 3000:3000 kakuzei.com/api
+docker run -d -p 3000:3000 kakuzei/api.kakuzei.com
 ```
 
 You can use a custom data folder using the --mount argument:
 
 ```bash
-docker run -d -p 3000:3000 --mount type=bind,source=/custom/data,target=/app/data kakuzei.com/api
+docker run -d -p 3000:3000 --mount type=bind,source=/custom/data,target=/app/data kakuzei/api.kakuzei.com
 ```
 
 ### Development
