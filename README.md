@@ -1,8 +1,8 @@
-## Rails server for kakuzei.com website ![build](https://github.com/kakuzei/rails.kakuzei.com/workflows/build/badge.svg)
+## API code of the kakuzei.com website using the Rails framework ![build](https://github.com/kakuzei/rails.kakuzei.com/workflows/build/badge.svg)
 
 ### Introduction
 
-rails.kakuzei.com provides a REST API for accessing pictures.
+api.kakuzei.com provides a REST API for accessing pictures.
 
 ### Requirements
 
@@ -23,7 +23,7 @@ docker build -f Dockerfile-dev -t ruby-dev .
 Run a ruby-dev Docker container by executing the following command:
 
 ```bash
-docker run --rm --name rails.kakuzei.com -p 3000:3000 -v %CD%:/app -v bundle:/usr/local/bundle -w /app -it ruby-dev
+docker run --rm --name api.kakuzei.com -p 3000:3000 -v %CD%:/app -v bundle:/usr/local/bundle -w /app -it ruby-dev
 ```
 
 ##### Install the Ruby dependencies
@@ -60,7 +60,7 @@ bundle exec puma
 Build a docker image by executing the following command:
 
 ```bash
-docker build -t kakuzei.com/rails .
+docker build -t kakuzei.com/api .
 ```
 
 ##### Start the container
@@ -68,13 +68,13 @@ docker build -t kakuzei.com/rails .
 Start the REST API by executing the following command:
 
 ```bash
-docker run -d -p 3000:3000 kakuzei.com/rails
+docker run -d -p 3000:3000 kakuzei.com/api
 ```
 
 You can use a custom data folder using the --mount argument:
 
 ```bash
-docker run -d -p 3000:3000 --mount type=bind,source=/custom/data,target=/app/data kakuzei.com/rails
+docker run -d -p 3000:3000 --mount type=bind,source=/custom/data,target=/app/data kakuzei.com/api
 ```
 
 ### Development
