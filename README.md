@@ -1,4 +1,4 @@
-## API code of the kakuzei.com website using the Rails framework ![build](https://github.com/kakuzei/rails.kakuzei.com/workflows/build/badge.svg)
+## API code of the kakuzei.com website using the Rails framework ![build](https://github.com/kakuzei/rails.kakuzei.com/workflows/CI%20Pipeline/badge.svg)
 
 ### Introduction
 
@@ -7,28 +7,13 @@ api.kakuzei.com provides a REST API for accessing pictures.
 ### Requirements
 
 * Docker
+* Ruby 2.6.6 with bundler
 
 ### Quickstart
 
-##### Build the ruby-dev Docker image
-
-Build the ruby-dev Docker image by executing the following command:
-
-```bash
-docker build -f Dockerfile-dev -t ruby-dev .
-```
-
-##### Run a ruby-dev Docker container
-
-Run a ruby-dev Docker container by executing the following command:
-
-```bash
-docker run --rm --name api.kakuzei.com -p 3000:3000 -v %CD%:/app -v bundle:/usr/local/bundle -w /app -it ruby-dev
-```
-
 ##### Install the Ruby dependencies
 
-Install the Ruby dependencies by executing the following command inside the running container:
+Install the Ruby dependencies by executing the following command:
 
 ```bash
 bundle install
@@ -53,7 +38,7 @@ Start the server by executing the following command:
 bundle exec puma
 ```
 
-### Production
+### Docker
 
 ##### Build the image
 
