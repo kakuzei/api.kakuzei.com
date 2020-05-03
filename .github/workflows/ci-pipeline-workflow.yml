@@ -61,9 +61,6 @@ jobs:
       id: app-version
       run: echo "::set-output name=version::$(cat config/initializers/version.rb  | grep VERSION | awk -F"'" '{print$2}')"
 
-    - name: Check application version
-      run: echo "VERSION = ${{ steps.app-version.outputs.version }}"
-
     - name: Build & push Docker image
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
