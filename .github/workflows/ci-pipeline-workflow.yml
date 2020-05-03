@@ -52,6 +52,9 @@ jobs:
       id: app-version
       run: echo "::set-output name=version::$(bundle exec rake app:version)"
 
+    - name: Check application version
+      run: echo "VERSION = ${{ steps.app-version.outputs.version }}""
+
   publish:
     name: Publish
     # if: github.ref == 'refs/heads/master'
@@ -60,6 +63,9 @@ jobs:
     steps:
     - name: Checkout the repository
       uses: actions/checkout@v2
+
+    - name: Check application version
+      run: echo "VERSION = ${{ steps.app-version.outputs.version }}""
 
     - name: Build & push Docker image
       uses: elgohr/Publish-Docker-Github-Action@master
