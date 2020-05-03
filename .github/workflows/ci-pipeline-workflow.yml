@@ -39,6 +39,10 @@ jobs:
         bundle config jobs 5
         bundle check || bundle install
 
+    - name: Define application version
+      id: app-version
+      run: echo "::set-output name=version::$(bundle exec rake app:version)"
+
     - name: Run Rubocop
       run: |
         bundle exec rake rubocop
@@ -56,10 +60,6 @@ jobs:
     steps:
     - name: Checkout the repository
       uses: actions/checkout@v2
-
-    - name: Define application version
-      id: app-version
-      run: echo "::set-output name=version::$(jq -r ".version" package.json)"
 
     - name: Build & push Docker image
       uses: elgohr/Publish-Docker-Github-Action@master

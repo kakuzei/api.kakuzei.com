@@ -8,6 +8,15 @@ AllCops:
   ExtraDetails: true
   TargetRailsVersion: 6.0
 
+Layout/LineLength:
+  Max: 120
+
+Layout/EndOfLine:
+  EnforcedStyle: lf
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
 Lint/RaiseException:
   Enabled: true
 
@@ -16,12 +25,6 @@ Lint/StructNewOverride:
 
 Metrics/BlockLength:
   ExcludedMethods: ['describe', 'context', 'shared_examples']
-
-Metrics/LineLength:
-  Max: 120
-
-Layout/EndOfLine:
-  EnforcedStyle: lf
 
 Lint/ScriptPermission:
   Enabled: false
@@ -36,6 +39,9 @@ Style/Documentation:
   Enabled: false
 
 Style/ExpandPathArguments:
+  Enabled: false
+
+Style/ExponentialNotation:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
