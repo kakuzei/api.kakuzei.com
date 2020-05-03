@@ -48,10 +48,6 @@ jobs:
         bundle exec rails db:migrate RAILS_ENV=test
         bundle exec rake spec
 
-    - name: Retrieve the application version
-      id: app-version
-      run: echo "::set-output name=version::$(bundle exec rake app:version)"
-
   publish:
     name: Publish
     # if: github.ref == 'refs/heads/master'
@@ -61,8 +57,12 @@ jobs:
     - name: Checkout the repository
       uses: actions/checkout@v2
 
+    - name: Retrieve application version
+      id: app-version
+      run: echo "::set-output name=version::$(cat config/initializers/version.rb  | grep VERSION | awk -F"'" '{print$2}')"
+
     - name: Check application version
-      run: echo "VERSION = ${{ steps.app-version.outputs.version }}""
+      run: echo "VERSION = ${{ steps.app-version.outputs.version }}"
 
     - name: Build & push Docker image
       uses: elgohr/Publish-Docker-Github-Action@master
