@@ -57,9 +57,9 @@ jobs:
     - name: Checkout the repository
       uses: actions/checkout@v2
 
-    - name: Define application version
+    - name: Retrieve application version
       id: app-version
-      run: echo "::set-output name=version::$(jq -r ".version" package.json)"
+      run: echo "::set-output name=version::$(cat config/initializers/version.rb  | grep VERSION | awk -F"'" '{print$2}')"
 
     - name: Build & push Docker image
       uses: elgohr/Publish-Docker-Github-Action@master
