@@ -6,6 +6,7 @@ AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
   ExtraDetails: true
+  NewCops: enable
   TargetRailsVersion: 6.0
 
 Layout/LineLength:
