@@ -3,6 +3,7 @@ require_relative 'boot'
 require 'rails'
 require 'active_model/railtie'
 require 'active_record/railtie'
+require 'active_support/core_ext/integer/time'
 require 'action_controller/railtie'
 
 # Require the gems listed in Gemfile, including any gems

@@ -14,10 +14,10 @@ jobs:
     - name: Checkout the repository
       uses: actions/checkout@v2
 
-    - name: Install ruby 2.6.6
+    - name: Install ruby 2.7.2
       uses: actions/setup-ruby@v1
       with:
-        ruby-version: 2.6.6
+        ruby-version: 2.7.2
 
     - name: Install sqlite3
       run: |
@@ -36,7 +36,6 @@ jobs:
         gem update
         gem install bundler
         bundle config path vendor/bundle
-        bundle config jobs 5
         bundle check || bundle install
 
     - name: Run Rubocop
