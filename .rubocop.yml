@@ -25,7 +25,10 @@ Lint/StructNewOverride:
   Enabled: true
 
 Metrics/BlockLength:
-  ExcludedMethods: ['describe', 'context', 'shared_examples']
+  IgnoredMethods: ['describe', 'context', 'shared_examples']
+
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
 
 Lint/ScriptPermission:
   Enabled: false
