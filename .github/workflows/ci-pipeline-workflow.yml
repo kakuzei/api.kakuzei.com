@@ -14,10 +14,10 @@ jobs:
     - name: Checkout the repository
       uses: actions/checkout@v2
 
-    - name: Install ruby 2.7.2
+    - name: Install ruby 3.0.0
       uses: actions/setup-ruby@v1
       with:
-        ruby-version: 2.7.2
+        ruby-version: 3.0.0
 
     - name: Install sqlite3
       run: |
