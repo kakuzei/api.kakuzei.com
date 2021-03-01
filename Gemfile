@@ -14,7 +14,7 @@ gem 'tzinfo-data'
 gem 'sqlite3'
 
 # Server
-gem 'puma'
+gem 'falcon'
 
 # Tests
 group :development, :test do

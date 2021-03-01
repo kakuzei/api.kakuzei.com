@@ -29,4 +29,7 @@ RUN chown -R rails:rails .
 
 USER rails
 
-CMD bundle exec rake kakuzei:init && bundle exec puma
+ENV RAILS_ENV=production
+ENV RAILS_LOG_TO_STDOUT=true
+
+CMD bundle exec rake kakuzei:init && bundle exec falcon serve -b http://0.0.0.0:9292
