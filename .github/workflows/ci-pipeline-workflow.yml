@@ -63,7 +63,7 @@ jobs:
     - name: Create GitHub release
       uses: ncipollo/release-action@v1
       with:
-        tag: ${{ steps.app-version.outputs.version }}"
+        tag: ${{ steps.app-version.outputs.version }}
         token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Build & push Docker image
