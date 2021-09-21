@@ -1,4 +1,4 @@
-FROM ruby:3.0.1-alpine
+FROM ruby:3.0.2-alpine
 
 ENV LANG="C.UTF-8"
 ENV BUILD_PACKAGES bash build-base curl-dev sqlite-dev zlib-dev
