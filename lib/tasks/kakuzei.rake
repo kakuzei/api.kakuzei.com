@@ -45,7 +45,7 @@ end
 
 def checksum(path, id, density)
   file = File.join(picture_path(path), "#{id}#{density}.jpg")
-  DIGEST.hexdigest(IO.binread(file)) if File.exist? file
+  DIGEST.hexdigest(File.binread(file)) if File.exist? file
 end
 
 def picture_path(path)

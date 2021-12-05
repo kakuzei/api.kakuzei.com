@@ -127,7 +127,7 @@ RSpec.describe 'pictures api', type: :request do
         end
 
         it 'returns the requested picture' do
-          expect(body).to eq(IO.binread(File.join(__dir__, '..', 'data', picture)))
+          expect(body).to eq(File.binread(File.join(__dir__, '..', 'data', picture)))
         end
 
         it 'responds with the image/jpeg content type' do

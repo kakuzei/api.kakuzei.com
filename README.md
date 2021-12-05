@@ -7,7 +7,7 @@ api.kakuzei.com provides a REST API for accessing pictures.
 ### Requirements
 
 * Docker
-* Ruby 3.0.2 with bundler
+* Ruby 3.0.3 with bundler
 
 ### Quickstart
 

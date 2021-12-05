@@ -21,7 +21,7 @@ class PicturesController < ApplicationController
   end
 
   def read_picture_file(picture, density)
-    IO.binread(file_path(picture.id, density)).tap do |raw_file|
+    File.binread(file_path(picture.id, density)).tap do |raw_file|
       raise Error::InvalidChecksum unless valid_checksum?(density, picture, Digest::SHA2.hexdigest(raw_file))
     end
   rescue Errno::ENOENT
