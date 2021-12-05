@@ -17,25 +17,15 @@ jobs:
     - name: Install ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.0.2
+        ruby-version: 3.0.3
+        bundler-cache: true
 
     - name: Install sqlite3
       run: |
         sudo apt-get install sqlite3 libsqlite3-dev
 
-    - name: Cache gems
-      id: cache-gems
-      uses: actions/cache@v1
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-cache-gems-${{ hashFiles('**/Gemfile.lock') }}
-
     - name: Install gem dependencies
       run: |
-        gem update --system
-        gem update
-        gem install bundler
-        bundle config path vendor/bundle
         bundle check || bundle install
 
     - name: Run Rubocop
