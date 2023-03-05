@@ -1,30 +1,25 @@
-FROM ruby:3.0.3-alpine
+FROM ruby:3.2.1-slim-bullseye
 
 ENV LANG="C.UTF-8"
-ENV BUILD_PACKAGES bash build-base curl-dev sqlite-dev zlib-dev
-ENV RUNTIME_PACKAGES sqlite sqlite-libs
+ENV BUILD_PACKAGES build-essential ruby-dev ruby-nio4r ruby-psych
 
 WORKDIR /app
 
 COPY Gemfile* ./
 
-RUN apk update \
- && apk upgrade \
- && apk add $BUILD_PACKAGES \
- && apk add $RUNTIME_PACKAGES \
- && rm -rf /var/cache/apk/* \
- && gem update bundler \
+RUN apt update \
+ && apt upgrade \
+ && apt install -y --no-install-recommends ${BUILD_PACKAGES} \
+ && gem update --system \
  && bundle install \
- && gem cleanup \
- && rm -rf /usr/lib/ruby/gems/*/cache/* \
- && apk del $BUILD_PACKAGES \
- && mkdir -p tmp/pids
-
-RUN addgroup -g 1000 rails \
- && adduser -S -u 1000 -g rails -s /bin/bash rails
+ && gem clean \
+ && apt-get remove -y ${BUILD_PACKAGES} \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
 COPY . .
 
+RUN groupadd -r rails && useradd --no-log-init -r -g rails rails
 RUN chown -R rails:rails .
 
 USER rails

@@ -1,3 +1,8 @@
+require:
+  - rubocop-rails
+  - rubocop-rake
+  - rubocop-rspec
+
 AllCops:
   Exclude:
     - db/migrate/*
@@ -23,9 +28,6 @@ Lint/RaiseException:
 
 Lint/StructNewOverride:
   Enabled: true
-
-Metrics/BlockLength:
-  IgnoredMethods: ['describe', 'context', 'shared_examples']
 
 Naming/VariableNumber:
   EnforcedStyle: snake_case

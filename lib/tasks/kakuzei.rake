@@ -34,7 +34,7 @@ def insert_pictures(path) # rubocop:disable Metrics/AbcSize, Metrics/MethodLengt
     picture[:high_density_checksum] = checksum(path, picture[:id], '@2x')
     insert(Picture, picture)
     tags.map { |tag| Tag.find_by(tag).id }.each do |tag_id|
-      insert(PicturesTag, tag_id: tag_id, picture_id: picture[:id])
+      insert(PicturesTag, tag_id:, picture_id: picture[:id])
     end
   end
 end

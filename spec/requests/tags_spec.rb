@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'tags api', type: :request do
+RSpec.describe 'tags api' do
   describe 'index' do
     before { get '/api/tags' }
 
