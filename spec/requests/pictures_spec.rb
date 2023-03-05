@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'pictures api', type: :request do
+RSpec.describe 'pictures api' do
   describe 'index' do
     describe 'when there is no picture available' do
       before { get '/api/pictures' }
