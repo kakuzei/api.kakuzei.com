@@ -2,6 +2,7 @@ require:
   - rubocop-rails
   - rubocop-rake
   - rubocop-rspec
+  - rubocop-rspec_rails
 
 AllCops:
   Exclude:
@@ -12,7 +13,7 @@ AllCops:
   DisplayStyleGuide: true
   ExtraDetails: true
   NewCops: enable
-  TargetRailsVersion: 6.0
+  TargetRailsVersion: 7.1
 
 Layout/LineLength:
   Max: 120

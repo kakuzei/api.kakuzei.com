@@ -14,4 +14,3 @@ CREATE INDEX "index_pictures_tags_on_picture_id" ON "pictures_tags" ("picture_id
 INSERT INTO "schema_migrations" (version) VALUES
 ('20170101000000');
 
-

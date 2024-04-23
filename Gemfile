@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.2.1'
+ruby '3.3.0'
 
 gem 'rake'
 
@@ -11,7 +11,7 @@ gem 'rails'
 gem 'tzinfo-data'
 
 # Database
-gem 'sqlite3'
+gem 'sqlite3', '~> 1.7.3'
 
 # Server
 gem 'falcon'
