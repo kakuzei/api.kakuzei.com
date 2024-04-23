@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout the repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Install ruby
       uses: ruby/setup-ruby@v1
@@ -44,7 +44,7 @@ jobs:
     needs: build
     steps:
     - name: Checkout the repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Retrieve application version
       id: app-version
@@ -57,7 +57,7 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Build & push Docker image
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         name: kakuzei/api.kakuzei.com
         username: ${{ secrets.DOCKER_USERNAME }}
