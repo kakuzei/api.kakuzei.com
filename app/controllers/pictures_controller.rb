@@ -38,7 +38,7 @@ class PicturesController < ApplicationController
   end
 
   def picture_params(id)
-    @uuid_matcher ||= Regexp.new(/^(?<uuid>[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12})(?<density>@2x)?$/) # rubocop:disable Lint/MixedRegexpCaptureTypes
+    @uuid_matcher ||= /^(?<uuid>[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12})(?<density>@2x)?$/ # rubocop:disable Lint/MixedRegexpCaptureTypes
     @uuid_matcher.match(id).tap do |matches|
       raise ActiveRecord::RecordNotFound unless matches
     end

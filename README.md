@@ -7,7 +7,7 @@ api.kakuzei.com provides a REST API for accessing pictures.
 ### Requirements
 
 * Docker
-* Ruby 3.2.1 with bundler
+* Ruby 3.3.0 with bundler
 
 ### Quickstart
 
@@ -35,7 +35,7 @@ bundle exec rake kakuzei:init
 Start the server by executing the following command:
 
 ```bash
-bundle exec puma
+bundle exec falcon
 ```
 
 ### Docker
