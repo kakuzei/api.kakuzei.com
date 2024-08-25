@@ -1,8 +1,6 @@
-FROM ruby:3.3.4-slim-bullseye
+FROM ruby:3.3.4-slim-bookworm
 
 ENV LANG="C.UTF-8"
-ENV BUILD_PACKAGES build-essential ruby-dev ruby-nio4r ruby-psych
-ENV RUNTIME_PACKAGES sqlite3
 
 WORKDIR /app
 
@@ -10,12 +8,12 @@ COPY Gemfile* ./
 
 RUN apt update \
  && apt upgrade -y \
- && apt install -y --no-install-recommends ${BUILD_PACKAGES} \
- && apt install -y ${RUNTIME_PACKAGES} \
+ && apt install -y --no-install-recommends build-essential ruby-dev ruby-nio4r ruby-psych \
+ && apt install -y sqlite3 \
  && gem update --system \
  && bundle install \
  && gem clean \
- && apt-get remove -y ${BUILD_PACKAGES} \
+ && apt-get remove -y build-essential ruby-dev ruby-nio4r ruby-psych \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
@@ -30,4 +28,4 @@ USER rails
 ENV RAILS_ENV=production
 ENV RAILS_LOG_TO_STDOUT=true
 
-CMD bundle exec rake kakuzei:init && bundle exec falcon serve -b http://0.0.0.0:9292
+CMD ["/bin/sh", "-c", "/app/start.sh"]
