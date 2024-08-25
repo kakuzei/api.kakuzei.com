@@ -1,4 +1,4 @@
-FROM ruby:3.3.0-slim-bullseye
+FROM ruby:3.3.4-slim-bullseye
 
 ENV LANG="C.UTF-8"
 ENV BUILD_PACKAGES build-essential ruby-dev ruby-nio4r ruby-psych
