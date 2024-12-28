@@ -17,7 +17,7 @@ jobs:
     - name: Install ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.3.4
+        ruby-version: 3.4.1
         bundler-cache: true
 
     - name: Install sqlite3

@@ -14,7 +14,7 @@ AllCops:
   DisplayStyleGuide: true
   ExtraDetails: true
   NewCops: enable
-  TargetRailsVersion: 7.1
+  TargetRailsVersion: 8.0
 
 Layout/LineLength:
   Max: 120
