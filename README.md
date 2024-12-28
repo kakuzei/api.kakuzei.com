@@ -7,7 +7,7 @@ api.kakuzei.com provides a REST API for accessing pictures.
 ### Requirements
 
 * Docker
-* Ruby 3.3.4 with bundler
+* Ruby 3.4.1 with bundler
 
 ### Quickstart
 
@@ -59,7 +59,7 @@ docker run -d -p 9292:9292 kakuzei/api.kakuzei.com
 You can use a custom data folder using the --mount argument:
 
 ```bash
-docker run -d -p 9292:9292 --mount type=bind,source=/custom/data,target=/app/data kakuzei/api.kakuzei.com
+docker run -d -p 9292:9292 --mount type=bind,source=./data,target=/app/data --env SECRET_KEY_BASE=secret kakuzei/api.kakuzei.com
 ```
 
 ### Development

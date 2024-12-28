@@ -1,4 +1,4 @@
-FROM ruby:3.3.4-slim-bookworm
+FROM ruby:3.4.1-slim-bookworm
 
 ENV LANG="C.UTF-8"
 
