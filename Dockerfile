@@ -1,4 +1,4 @@
-FROM ruby:3.4.1-slim-bookworm
+FROM ruby:3.4.4-slim-bookworm
 
 ENV LANG="C.UTF-8"
 
@@ -8,12 +8,12 @@ COPY Gemfile* ./
 
 RUN apt update \
  && apt upgrade -y \
- && apt install -y --no-install-recommends build-essential ruby-dev ruby-nio4r ruby-psych \
+ && apt install -y --no-install-recommends build-essential libssl-dev libyaml-dev ruby-dev ruby-nio4r ruby-psych \
  && apt install -y sqlite3 \
  && gem update --system \
  && bundle install \
  && gem clean \
- && apt-get remove -y build-essential ruby-dev ruby-nio4r ruby-psych \
+ && apt-get remove -y build-essential libssl-dev libyaml-dev ruby-dev ruby-nio4r ruby-psych \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 

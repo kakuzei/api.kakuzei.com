@@ -192,11 +192,11 @@ RSpec.describe 'pictures api' do
     end
 
     describe 'when a low density picture is requested' do
-      include_examples 'manage picture requests when the jpg format provided', ''
+      it_behaves_like 'manage picture requests when the jpg format provided', ''
     end
 
     describe 'when a high density picture is requested' do
-      include_examples 'manage picture requests when the jpg format provided', '@2x'
+      it_behaves_like 'manage picture requests when the jpg format provided', '@2x'
     end
   end
 end
