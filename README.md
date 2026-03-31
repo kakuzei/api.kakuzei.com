@@ -53,7 +53,7 @@ docker build -t kakuzei/api.kakuzei.com .
 Start the REST API by executing the following command:
 
 ```bash
-docker run -d -p 9292:9292 kakuzei/api.kakuzei.com
+docker run -d -p 9292:9292 --env SECRET_KEY_BASE=secret kakuzei/api.kakuzei.com
 ```
 
 You can use a custom data folder using the --mount argument:
