@@ -1,4 +1,4 @@
-FROM ruby:4.0.2-slim-trixie
+FROM ruby:4.0.10-slim-trixie
 
 ENV LANG="C.UTF-8"
 

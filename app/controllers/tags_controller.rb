@@ -4,6 +4,6 @@ class TagsController < ApplicationController
   end
 
   def show
-    render json: Tag.find(params[:id])
+    render json: Tag.find(params.expect(:id))
   end
 end

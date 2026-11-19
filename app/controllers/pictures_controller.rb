@@ -1,6 +1,6 @@
 class PicturesController < ApplicationController
   def index
-    pictures = params[:tag_id] ? Tag.find(params[:tag_id]).pictures : Picture.all
+    pictures = params[:tag_id] ? Tag.find(params.expect(:tag_id)).pictures : Picture.all
     render json: pictures.order(:date_taken).reverse_order
   end
 
@@ -9,7 +9,7 @@ class PicturesController < ApplicationController
       response.headers['Expires'] = 1.year.from_now.httpdate
       render plain: picture_file, content_type: 'image/jpeg'
     else
-      render json: Picture.find(params[:id])
+      render json: Picture.find(params.expect(:id))
     end
   end
 
